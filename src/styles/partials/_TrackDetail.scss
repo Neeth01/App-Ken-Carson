@@ -1,0 +1,217 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #dc2626;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #333;
+    border-top: 4px solid #dc2626;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+}
+
+.detail-page {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 2rem 0;
+
+  .background-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(20, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+    backdrop-filter: blur(3px);
+  }
+
+  .content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    backdrop-filter: blur(15px);
+  }
+
+  .back-button {
+    background: linear-gradient(145deg, #dc2626, #b91c1c);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background: linear-gradient(145deg, #ef4444, #dc2626);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+    }
+  }
+
+  .track-header {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
+
+    .track-cover {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(220, 38, 38, 0.5);
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .track-meta {
+      padding: 1rem 0;
+
+      .track-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 3.5rem;
+        background: linear-gradient(45deg, #fff, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(220, 38, 38, 0.5);
+      }
+
+      .track-album {
+        margin-bottom: 1.5rem;
+      }
+
+      .track-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .detail-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .label {
+            font-weight: 600;
+            color: #dc2626;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            min-width: 120px;
+          }
+
+          .value {
+            color: #ccc;
+            font-weight: 500;
+          }
+
+          .track-rating {
+            font-size: 2rem;
+            color: #dc2626;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .lyrics-section {
+    margin-top: 3rem;
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #dc2626;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .lyrics-container {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      backdrop-filter: blur(5px);
+
+      .lyrics-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #fff;
+        white-space: pre-wrap;
+        margin: 0;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .track-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .track-cover {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .track-title {
+      font-size: 2rem;
+    }
+
+    .detail-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .label {
+      min-width: auto;
+    }
+
+    .content {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
