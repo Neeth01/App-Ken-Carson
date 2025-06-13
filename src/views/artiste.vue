@@ -45,25 +45,42 @@ La similitude de son style avec le style utilisé par son directeur de disques P
     </section>
 
     <!-- Stats / Fun Facts -->
+     <!-- Enhanced Stats Section -->
     <section class="stats-section">
-      <h3>Stats</h3><br>
-      <ul>
-        <li><strong>Morceau le plus streamé :</strong>Yale</li>
-        <li><strong>Streams :</strong> 4.37B	</li>
-        <li><strong>Followers :</strong> 8.92M</li>
-      </ul>
-    </section>
+      <h3>Stats & Highlights</h3>
+      <div class="stats-grid">
 
-    <!-- Social Links -->
-    <section class="social-section">
-      <h3>Réseaux</h3>
-      <div class="social-icons">
-        <a href="#" aria-label="Instagram">📸</a>
-        <a href="#" aria-label="Twitter">🐦</a>
-        <a href="#" aria-label="YouTube">▶️</a>
-        <a href="#" aria-label="Spotify">🎵</a>
+        <div class="stat-item">
+          <div class="icon">📀</div>
+          <span class="stat-value">4</span>
+          <span class="stat-label">Albums Studio</span>
+        </div>
+
+        <div class="stat-item">
+          <div class="icon">🔊</div>
+          <span class="stat-value">4.37B</span>
+          <span class="stat-label">Total Streams</span>
+        </div>
+        <div class="stat-item">
+          <div class="icon">👥</div>
+          <span class="stat-value">8.9M</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+          <div class="icon">📈</div>
+          <span class="stat-value">8M+</span>
+          <span class="stat-label">Monthly Listeners</span>
+        </div>
+        <div class="stat-item">
+          <div class="icon">💿</div>
+          <span class="stat-value">6</span>
+          <span class="stat-label">Mixtapes</span>
+        </div>
+
       </div>
     </section>
+
+
   </div>
 </template>
 
@@ -208,32 +225,49 @@ export default {
   font-style: italic;
 }
 
-/* Stats */
 .stats-section {
+  background: rgba(0,0,0,0.6);
+  padding: 2rem;
+  border-radius: 12px;
   margin-bottom: 2rem;
 }
-.stats-section ul {
-  list-style: none;
-  padding: 0;
+.stats-section h3 {
+  color: #f87171;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
-.stats-section li {
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+.stat-item {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.stat-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: linear-gradient(135deg, rgba(220,38,38,0.4), rgba(245,101,101,0.4));
+}
+.icon {
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-.stats-section strong {
-  color: #dc2626;
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
-/* Social */
-.social-section {
-  text-align: center;
-  padding-bottom: 2rem;
-}
-.social-icons a {
-  margin: 0 1rem;
-  font-size: 2rem;
-  transition: transform 0.2s;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-}
 </style>
