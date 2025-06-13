@@ -42,7 +42,7 @@ export default {
   },
   async created() {
     try {
-      const res = await fetch('/wp-json/ken/v1/album')
+      const res = await fetch('https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/album')
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
       this.albums = data.map(a => ({
@@ -58,7 +58,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-@import '../styles/partials/AlbumList';
-</style>

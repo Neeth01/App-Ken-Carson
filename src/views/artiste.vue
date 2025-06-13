@@ -81,8 +81,6 @@ La similitude de son style avec le style utilisé par son directeur de disques P
 
 <script>
 import NavMenu from '../components/NavMenu.vue';
-// Import SCSS partial using relative path
-import '../styles/partials/_Artiste.scss';
 
 // Import images statically
 import ken1 from '../assets/ken1.jpg';
@@ -127,7 +125,3 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-// Import the SCSS partial with relative path
-@import '../styles/partials/_Artiste.scss';
-</style>

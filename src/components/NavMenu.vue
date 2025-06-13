@@ -47,12 +47,12 @@ export default {
     const albums = ref([]);
     const tracks = ref([]);
 
-    fetch('/wp-json/ken/v1/album')
+    fetch('https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/album')
       .then(r => r.json())
       .then(data => {
         albums.value = data.map(a => ({ id: a.id, name: a.acf_fields.nom, route: { name: 'Album', params: { id: a.id } } }));
       });
-    fetch('/wp-json/ken/v1/morceau')
+    fetch('https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/morceau')
       .then(r => r.json())
       .then(data => {
         tracks.value = data.map(t => ({ id: t.id, name: t.acf_fields.titre, route: { name: 'Track', params: { id: t.id } } }));

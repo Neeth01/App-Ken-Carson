@@ -1,3 +1,5 @@
+@import 'variables'; // si besoin
+
 .loading {
   display: flex;
   flex-direction: column;
@@ -79,6 +81,12 @@
     margin-bottom: 3rem;
     align-items: start;
 
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;  // cover et meta en colonne
+      text-align: center;
+      gap: 2rem;
+    }
+
     .album-cover-large {
       width: 100%;
       aspect-ratio: 1/1;
@@ -103,10 +111,19 @@
         font-size: 4rem;
         color: #666;
       }
+
+      @media (max-width: 768px) {
+        max-width: 250px;
+        margin: 0 auto;
+      }
     }
 
     .album-meta {
       padding: 1rem 0;
+
+      @media (max-width: 768px) {
+        margin-top: 1rem; // espace avant la méta
+      }
 
       .album-title {
         font-size: 3rem;
@@ -174,7 +191,6 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
         &:last-child { border-bottom: none; }
-
         &:hover {
           background: rgba(220, 38, 38, 0.1);
           transform: translateX(5px);
@@ -202,28 +218,13 @@
             }
           }
         }
+
+        @media (max-width: 768px) {
+          grid-template-columns: 30px 1fr;
+          padding: 0.8rem;
+        }
       }
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .album-header {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .album-cover-large {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-
-  .album-meta .album-title { font-size: 2rem; }
-
-  .tracks-list .track-item {
-    grid-template-columns: 30px 1fr;
-    padding: 0.8rem;
   }
 }
 

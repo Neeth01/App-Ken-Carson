@@ -1,4 +1,4 @@
-import './assets/main.css'
+import '../src/assets/main.css' // ← IMPORTE le fichier CSS principal
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'      // ← IMPORTE le routeur

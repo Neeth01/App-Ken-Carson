@@ -31,8 +31,6 @@
 
 <script>
 import NavMenu from '../components/NavMenu.vue';
-// SCSS partial import
-import '../styles/partials/_Classement.scss';
 
 export default {
   name: 'Classement',
@@ -49,7 +47,7 @@ export default {
   },
   async created() {
     try {
-      const res = await fetch('/wp-json/ken/v1/morceau');
+      const res = await fetch('https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/morceau');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       this.tracks = data.map(m => ({ id: m.id, titre: m.acf_fields.titre, note: m.acf_fields.note || '0' }));
@@ -59,7 +57,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import '../styles/partials/_Classement.scss';
-</style>

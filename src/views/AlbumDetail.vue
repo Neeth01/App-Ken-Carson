@@ -61,7 +61,7 @@ export default {
   },
   async created() {
     try {
-      const res = await fetch(`/wp-json/ken/v1/album/${this.id}`);
+      const res = await fetch(`https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/album/${this.id}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       this.album = await res.json();
     } catch (e) {
@@ -70,7 +70,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import '../styles/partials/AlbumDetail';
-</style>

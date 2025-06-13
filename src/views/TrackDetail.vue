@@ -76,7 +76,7 @@ export default {
   },
   async created() {
     try {
-      const resTrack = await fetch(`/wp-json/ken/v1/morceau/${this.id}`);
+      const resTrack = await fetch(`https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/morceau/${this.id}`);
       if (!resTrack.ok) throw new Error(`HTTP ${resTrack.status}`);
       const raw = await resTrack.json();
 
@@ -89,7 +89,7 @@ export default {
         album: { id: raw.acf_fields.album.id, title: raw.acf_fields.album.title }
       };
 
-      const resAlbum = await fetch(`/wp-json/ken/v1/album/${track.album.id}`);
+      const resAlbum = await fetch(`https://sae401-25.mmi-stdie.fr/jonass/wp-json/ken/v1/album/${track.album.id}`);
       if (resAlbum.ok) {
         const alb = await resAlbum.json();
         track.album.cover_url = alb.cover_url || alb.acf_fields.cover_url;
@@ -102,7 +102,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import '../styles/partials/_TrackDetail.scss';
-</style>

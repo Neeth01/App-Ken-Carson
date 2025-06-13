@@ -1,6 +1,5 @@
 @import 'variables'; // si besoin
 
-
 .header {
   position: relative;
   z-index: 10000;
@@ -46,6 +45,14 @@
   gap: 2rem;
   margin-top: 2rem;
   padding-bottom: 1.5rem;
+  flex-wrap: wrap;      // autorise le retour à la ligne
+  max-width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;  // menu vertical en mobile
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
 
   .nav-item {
     color: #666;
@@ -96,6 +103,13 @@
       width: 300px;
       z-index: 10001;
 
+      @media (max-width: 600px) {
+        width: 90vw;              // tient dans l’écran
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+      }
+
       .search-input {
         width: 100%;
         padding: 0.5rem;
@@ -141,6 +155,6 @@
 .fade-enter-active,
 .fade-leave-active { transition: all 0.2s ease; }
 .fade-enter-from,
-.fade-leave-to { opacity: 0; transform: translateY(-10px); }
+.fade-leave-to     { opacity: 0; transform: translateY(-10px); }
 .fade-enter-to,
-.fade-leave-from { opacity: 1; transform: translateY(0); }
+.fade-leave-from   { opacity: 1; transform: translateY(0); }
