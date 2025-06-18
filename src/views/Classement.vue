@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     top20() {
-      return this.tracks
+        return [...this.tracks]
         .sort((a, b) => parseFloat(b.note) - parseFloat(a.note))
         .slice(0, 20);
     }
